@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ful name example</title>
+	 <script type="text/javascript" src="scripts/angular.min.js"></script>
+	 <script>
+	 	
+	 	var app=angular.module('myApp',[]);
+	 	app.controller("HomeController",function($scope)
+	 	{
+
+	 		$scope.student={
+
+	 			firstName: "Mahesh",
+               lastName: "Parashar",
+	 		
+	 		 fullName: function() {
+                  var studentObject;
+                  studentObject = $scope.student;
+                  return studentObject.firstName + " " + studentObject.lastName;
+              }
+          };
+	 	});
+
+	 </script>
+
+</head>
+<body ng-app="myApp" ng-controller="HomeController">
+
+First Name:<input type="text" name="txtfname" ng-model="student.firstName"><br>
+Last Name:<input type="text" name="txtlname" ng-model="student.lastName"><br>
+
+Your Full Name is {{student.fullName()}}
+
+</body>
+</html>

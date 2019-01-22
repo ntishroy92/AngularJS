@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change pattern  Dynamically</title>
+	 <script src="scripts/angular.js"></script>
+	 <script>
+	 	var app=angular.module('myApp',[]);
+	 	app.controller("HomeController",function($scope)
+	 	{
+
+	 		$scope.paymentDetails="Select your option";
+	 		$scope.regExp="";
+	 		$scope.errorMsg="";
+	 		$scope.getOption=function(){
+
+	 			$scope.msg=$scope.paymentDetails;
+
+	 			switch($scope.msg)
+	 			{
+
+
+	 				case"card Number":
+	 				$scope.regExp="\\d{16}";
+	 				$scope.errorMsg="Invalid card Number";
+	 				break;
+
+	 				case"CVV":
+	 				$scope.regExp="\\d{3}";
+	 				$scope.errorMsg="Invalid CVV ";
+	 				break;
+
+	 				case"OTP":
+	 				$scope.regExp="\\d{6}";
+	 				$scope.errorMsg="Invalid OTP";
+
+	 			}
+
+	 		}
+	 	});
+
+
+	 </script>
+</head>
+<body ng-app="myApp" ng-controller="HomeController">
+
+<form name="form1">
+	<fieldset>
+		
+<legend>Payment</legend>
+Crad Details:
+<select ng-model="paymentDetails" ng-change="getOption()">
+	<option value="card Number">Card Number</option>
+	<option value="CVV">CVV</option>
+	<option value="OTP">OTP</option><br><br>
+	{{paymentDetails}}:<input type="text" name="txtvalue" ng-model="txtvalue" ng-pattern="regExp" size="30">
+	<span ng-show="form1.txtvalue.$invalid">{{errorMsg}}</span>
+
+</select>
+
+	</fieldset>
+
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bulb on off</title>
+	<script type="text/javascript" src="scripts/angular.min.js"></script>
+	
+</head>
+<body ng-app>
+
+<h3 ng-init="count=0" ng-mouseover="count=count+1">Move mouse on the heading</h3>
+Mouse is Over heading{{count}} times.
+<br>
+<div>
+	<img ng-init="Bulb='images/bulboff.jpg'" ng-src="{{Bulb}}" ng-mousedown="Bulb='images/bulbon.jpg'" ng-mouseup="Bulb='images/bulboff.jpg'" width="400" height="400"><br>
+
+</div>
+</body>
+</html>

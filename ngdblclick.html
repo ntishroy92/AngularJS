@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ng dblclick</title>
+	<script type="text/javascript" src="scripts/angular.min.js"></script>
+	<script>
+		var app=angular.module('myApp',[]);
+		app.controller("HomeController",function($scope)
+		{
+
+			$scope.opencar=function(){
+
+				window.open("images/1.jpg","car","width=600 height=500");
+			}
+
+		})
+	</script>
+</head>
+<body ng-app="myApp" ng-controller="HomeController">
+	<div>
+		<img src="images/1.jpg" width="40" height="
+		40" ng-dblclick="opencar()"><br>
+		double click on the car to View actual size
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image slide</title>
+	 <script type="text/javascript" src="scripts/angular.min.js"></script>
+	 <script>
+	 	var app=angular.module('myApp',[]);
+	 	app.controller("HomeController",function($scope)
+	 	{
+
+	 			$scope.index=0;
+	 			$scope.car="images/1.jpg";
+	 			$scope.title=" first Car ";
+
+	 			$scope.cars=["images/1.jpg","images/2.jpg","images/3.jpg"];
+	 			$scope.name=["frst car","second car","third car"];
+	 			$scope.changeCar=function(){
+	 				$scope.car=$scope.cars
+	 				[$scope.index];
+	 				$scope.title=$scope.name
+	 				[$scope.index];
+
+
+	 			}
+
+
+	 	})
+
+	 </script>
+</head>
+<body ng-app="myApp" ng-controller="HomeController">
+	<div>
+
+	{{title}}<br><br></div>
+<div style="width: 40% height:40%">	<img src="{{car}}"><br><br></div>
+	1<input type="range" min="0" max="2" ng-model="index" ng-change="changeCar()">3
+
+
+</body>
+</html>

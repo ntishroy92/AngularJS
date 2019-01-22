@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ng Disable</title>
+	<script type="text/javascript" src="scripts/angular.min.js"></script>
+
+</head>
+<body ng-app>
+	<div>
+		
+
+		are you from Bangalore:<input type="checkbox" ng-model="city">Yes/No
+
+	</div><br>
+	Select City:
+	<select>\
+		<option>Delhi</option>
+		<option>Bangalore</option>
+		<option>Hyderabad</option>
+	</select><br><br>
+	<fieldset>
+		<legend>
+			License terms</legend>
+			<textarea rows="4" cols="30" ng-readonly="true">License Terms and conditions.........</textarea><br>
+			<input type="checkbox" ng-model="terms">Accept our Terms of Services<br>
+			<button ng-disabled="!terms">Register</button>
+
+	</fieldset>
+
+
+
+
+</body>
+</html>

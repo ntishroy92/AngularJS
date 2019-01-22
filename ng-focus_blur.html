@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blur and focus</title>
+	<script type="text/javascript" src="scripts/angular.min.js"></script>
+	<script>
+		
+		var app=angular.module('myApp',[]);
+		app.controller("HomeController",function($scope)
+		{
+
+
+				$scope.msg="";
+				$scope.uname="";
+				$scope.focus=function(){
+
+					$scope.msg="Name in Block  Letter";
+				}
+				$scope.blur=function(){
+
+					$scope.msg="";
+					$scope.uname=$scope.uname.toUpperCase();
+				}
+
+
+
+
+		});
+
+	</script>
+</head>
+<body ng-app="myApp" ng-controller="HomeController">
+	Name:<input type="text" ng-model="uname" ng-focus="focus()" ng-blur="blur()">
+	<span>{{msg}}</span>
+
+</body>
+</html>

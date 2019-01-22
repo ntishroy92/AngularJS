@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ng Change</title>
+	 <script type="text/javascript" src="scripts/angular.min.js"></script>
+	 <script>
+	 	var app=angular.module('myApp',[]);
+	 	app.controller("HomeController",function($scope){
+
+
+	 	
+
+	 	})
+
+	 </script>
+</head>
+<body ng-app="myApp">
+	<input type="text" ng-model="uname" ng-init="count=0" ng-change="count=count+1"><br>
+	<div>
+		
+		Name  changed{{count}} times........
+
+	</div>
+
+</body>
+</html>

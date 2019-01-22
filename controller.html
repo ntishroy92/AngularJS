@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>controller</title>
+	 <script type="text/javascript" src="scripts/angular.min.js"></script>
+	 <script>
+	 	
+	 		var app=angular.module('myApp',[]);
+	 		app.controller("HomeController",function($scope)
+
+	 		{
+
+	 			$scope.title="HomePage";
+
+	 			$scope.msg="This is our home page";
+
+	 		});
+
+	 		app.controller("contactcontroller", function($scope)
+
+	 		{
+	 				$scope.title="contact us";
+	 				$scope.msg="J.P nagar 5th  cross, bangalore";
+
+	 		});
+
+	 </script>
+</head>
+<body ng-app="myApp">
+
+	<div  ng-controller="HomeController">
+		
+		{{title}}<br>
+		<b>{{msg}}</b><br>
+
+	</div>
+
+	<div ng-controller="contactcontroller">
+		{{title}}
+		<h6>{{msg}}</h6>
+		
+		
+
+	</div>
+
+</body>
+</html>
